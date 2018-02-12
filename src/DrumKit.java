@@ -61,14 +61,15 @@ public class DrumKit extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
    	 // 14. When the mouse is clicked, print "mouse clicked"
 System.out.println("Mouse clicked");
-   	 JLabel drumClicked = (JLabel) e.getSource();
+	 JLabel drumClicked = (JLabel) e.getSource();
+
    	// 15. Download a drum sound and drop it into your "default package". You can find it on freesound.org. To download it, log in as leagueofamazing/code4life.
-   	 
+   	 String drumsound = new String ("/Level1-Module0/src/410514__inspectorj__snare-drum-single-hit-a-h1 (1).wav");
    	 // 16. If they clicked on the drumImage...
 
    	// 17. ...use the playSound method to play a drum sound.
-
-   	 // 18. Add more images to make a drumkit. Remember to add a mouse listener to each one.
+    if((JLabel)e.getSource() == drumLabelWithImage){playSound(drumsound);}
+   	// 18. Add more images to make a drumkit. Remember to add a mouse listener to each one.
     }
 
     private JLabel createLabelImage(String fileName)
@@ -84,14 +85,15 @@ System.out.println("Mouse clicked");
 		JLabel imageLabel = new JLabel(icon);
 		return imageLabel;
 	}
-
-
     private void playSound(String fileName) {
-   	 AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
-   	 sound.play();
-    }
+	       	 AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
+	       	 sound.play();
+	        }
+	}
 
-}
+   
+
+
 
 
 
